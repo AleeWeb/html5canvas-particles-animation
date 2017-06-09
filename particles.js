@@ -6,6 +6,16 @@ canvas.height = window.innerHeight;
 var c = canvas.getContext('2d');   //context variable
 
 
+var mouse = {
+  x: undefined,
+  y: undefined
+}
+window.addEventListener('mousemove',
+  function(event) {
+    mouse.x = event.x;
+    mouse.y = event.y;
+})
+
 //Object Oriented Programming
 //JavaScript Object below is CAPITALIZED to indicate this is an Object
 function Circle(x, y, dx, dy, radius) {
@@ -34,6 +44,11 @@ function Circle(x, y, dx, dy, radius) {
 			}
 				this.x += this.dx; //Add 1 on to X.
 				this.y += this.dy;
+
+        //interactivity occurs
+      if (mouse.x - this.x < 50 && mouse.x - this.x > -50) {
+        this.radius =+ 1;
+        }
 
 			this.draw();
 	}
