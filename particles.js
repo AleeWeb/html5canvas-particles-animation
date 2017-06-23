@@ -48,8 +48,10 @@ function Circle(x, y, dx, dy, radius) {
         //interactivity occurs
       if (mouse.x - this.x < 50 && mouse.x - this.x > -50
         && mouse.y - this.y < 50 && mouse.y - this.y > -50
-      ) else {
-        this.radius =+ 1;
+      ) {
+        this.radius += 1;
+      } else if(this.radius > 2){
+        this.radius -= 1;
         }
 
 			this.draw();
