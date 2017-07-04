@@ -14,6 +14,14 @@ var mouse = {
 var maxRadius = 60;
 var minRadius = 2;
 
+var colorArray = [
+  '#330099',
+  '#330066',
+  '#6600FF',
+  '#006699',
+  '#00FF33',
+];
+
 window.addEventListener('mousemove',
   function(event) {
     mouse.x = event.x;
@@ -33,7 +41,7 @@ function Circle(x, y, dx, dy, radius) {
 		this.draw = function() {
 			c.beginPath();
 			c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
-			c.strokeStyle = 'blue';
+      c.fillStyle = colorArray[Math.floor(Math.random() * colorArray.length)];
 			c.stroke();
 			c.fill();
 		}
